@@ -10,7 +10,7 @@ import { MdMenu } from "react-icons/md"
 const Header = () => {
   const [headerActive, setHeaderActive] = useState(false)
 
-  const [openNav, setOpenNav] = useState()
+  const [openNav, setOpenNav] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
