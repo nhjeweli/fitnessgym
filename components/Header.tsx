@@ -8,7 +8,8 @@ import Image from "next/image"
 import { MdMenu } from "react-icons/md"
 
 const Header = () => {
-  const [headerActive, setHeaderActive] = useState()
+  const [headerActive, setHeaderActive] = useState(false)
+
   const [openNav, setOpenNav] = useState()
 
   useEffect(() => {
@@ -18,10 +19,11 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll)
 
+    // Clean up the event listener when component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  }, [headerActive])
 
   return (
     <header className={`${headerActive ? "h-[100px]" : "h-[124px]"} fixed top-0 w-full bg-primary-200 h-[100px] transition-all z-50`}>
